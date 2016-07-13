@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.hide {
+  display: none;
+}
+body {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-size: 16px;
+  font-family: Verdana, Arial, Helvetica;
+  background-color: #FFFCF6;
+  position: relative;
+  color: #4A4A4A;
+}
+ul li {
+  list-style-type: none;
+}
+input {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.left-part {
+  float: left;
+}
+.right-part {
+  float: right;
+}
+.clear {
+  clear: both;
+}
+.left-right-border {
+  border-left: solid 1px #E7E7EB;
+  border-right: solid 1px #E7E7EB;
+}
+.top-bottom-border {
+  border-top: solid 1px #E7E7EB;
+  border-bottom: solid 1px #E7E7EB;
+}
+.btn {
+  cursor: pointer;
+  padding: 0 15px;
+  float: left;
+  line-height: 30px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+.parallel-container > *:not(.clear) {
+  float: left;
+}
+.horizontal-center {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+}
+.vertical-center {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+}
+.total-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+.font-number-word {
+    font-family: Helvetica, Arial, Verdana;
+}
+
+
+#PaoDou .PaoDou-wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+#PaoDou .PaoDou-container {
+  padding: 40px 0;
+}
+
+.player .info-field {
+  width: 150px;
+  line-height: 25px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: rgb(251, 251, 249);
+  border: solid 2px rgb(46, 61, 54);
+  -moz-box-shadow: 5px 5px 5px rgba(0,0,0,.34901961);
+  -webkit-box-shadow: 5px 5px 5px rgba(0,0,0,.34901961);
+  box-shadow: 5px 5px 5px rgba(0,0,0,.34901961);
+}
+
+.player .info-field .HP-background-field {
+  margin-top: 5px;
+  width: 110px;
+  height: 8px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  border: solid 1px rgb(46, 61, 54);
+  overflow: hidden;
+}
+
+.player .info-field .HP-background-field .inner-bar {
+  height: 8px;
+  width: 0;
+  background: -webkit-linear-gradient(rgb(245, 223, 59), rgb(240, 139, 0));
+  background: -o-linear-gradient(rgb(245, 223, 59), rgb(240, 139, 0));
+  background: -moz-linear-gradient(rgb(245, 223, 59), rgb(240, 139, 0));
+  background: linear-gradient(rgb(245, 223, 59), rgb(240, 139, 0));
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.player .avater-field {
+  padding: 10px 0;
+}
+
+.player.opponent .avater-field {
+  margin-left: 20px;
+}
+
+.player.self .avater-field {
+  margin-right: 20px;
+}
+
+.player .avater-field .avater {
+  width: 60px;
+  height: 60px;
+  background-size: 60px 60px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  -moz-box-shadow: 1px 1px 5px rgba(0,0,0,.34901961);
+  -webkit-box-shadow: 1px 1px 5px rgba(0,0,0,.34901961);
+  box-shadow: 1px 1px 5px rgba(0,0,0,.34901961);
+}
+
+
+.msg-field {
+  margin: 50px auto;
+}
+
+.msg-field ul {
+  height: 100px;
+  position: relative;
+  margin: 0 auto;
+  width: 200px;
+}
+
+.msg-field ul li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100px;
+  margin: 0 auto;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  background-color: #FC797A;
+  color: #fff;
+}
+
+.msg-field ul li p {
+  width: 80%;
+}
+
