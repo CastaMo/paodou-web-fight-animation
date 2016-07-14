@@ -31,57 +31,13 @@
 		elCSSSelector 	: 	"#basic-info .msg-field ul.msg-list"
 	});
 
+
+	//通过依赖注入实现控制反转
 	driver 			= new Driver({
 		self 						: 	self,
 		opponent 				: 	opponent,
 		msg 						: 	msg
 	});
-
-
-	var testOptions = {
-		self 			: 	{
-			name 			: 	"吴家荣",
-			maxHP 		: 	360,
-			lv 				: 	1,
-			url 			: 	""
-		},
-		opponent	: 	{
-			name 			: 	"叶嘉祺",
-			maxHP 		: 	500,
-			lv 				: 	3,
-			url 			: 	""
-		}
-	};
-	var processList = [
-		{
-			attacker 	: 1,
-			demage 		: 23,
-			type 			: 0
-		},
-		{
-			attacker 	: 0,
-			demage 		: 26,
-			type 			: 1
-		},
-		{
-			attacker 	: 1,
-			demage 		: 52,
-			type 			: 0
-		},
-		{
-			attacker 	: 0,
-			demage 		: 100,
-			type 			: 2
-		},
-		{
-			attacker 	: 1,
-			demage 		: 250,
-			type 			: 1
-		}
-	];
-
-	testOptions.processList = processList;
-	
 
 	var init = win.init = function(testOptions) {
 		var processList = testOptions.processList;
