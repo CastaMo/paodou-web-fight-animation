@@ -72,8 +72,13 @@
 		driver.readData(testOptions);
 		driver.play();
 	}
-
-	// driver.readData(testOptions);
-	// driver.play();
+	var a;
+	if (a = location.search.replace("?data=", "")) {
+		try {
+			init(JSON.parse(decodeURI(a)));
+		} catch(e) {
+			alert("参数出错");
+		}
+	}
 
 })(window, document);
