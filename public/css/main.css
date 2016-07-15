@@ -311,7 +311,7 @@ a {
 
 #share .share {
   margin: 0 auto;
-  width: 240px;
+  width: 150px;
 }
 
 .share .icon {
@@ -322,7 +322,7 @@ a {
 }
 
 .share .icon.icon-qq {
-  margin: 0 30px;
+  margin-right: 30px;
 }
 
 #share .exit-field {
