@@ -79,38 +79,45 @@
 			type 			: 1
 		}
 	];
-	var msg 			= [],
-			contents 	= [];
-	for (var i = 0, len = processList.length; i < len; i++) {
-		var process = processList[i],
-				target 	= process.attacker === 0 ? "opponent" : "self",
-				attacker= process.attacker === 0 ? "self" : "opponent",
-				type 		= process.type,
-				value 	= type === 0 ? process.demage : (type === 1 ? process.demage * 2 : 0),
-				random 	= process.random || Math.floor(Math.random() * FIGHT_INFO_LEN);
 
-		var fight 	= fightInfo[random];
-		if (type === 2) {
-			fight += ", 但" + testOptions[target].name + "避开了。";
-		} else if (type === 1) {
-			fight += ", " + testOptions[target].name + "受到了" + value + "点的暴击伤害";
-		} else {
-			fight += ", " + testOptions[target].name + "受到了" + value + "点的伤害";
+	testOptions.processList = processList;
+	
+
+	var init = win.init = function(testOptions) {
+		var processList = testOptions.processList;
+		var msg 			= [],
+				contents 	= [];
+		for (var i = 0, len = processList.length; i < len; i++) {
+			var process = processList[i],
+					target 	= process.attacker === 0 ? "opponent" : "self",
+					attacker= process.attacker === 0 ? "self" : "opponent",
+					type 		= process.type,
+					value 	= type === 0 ? process.demage : (type === 1 ? process.demage * 2 : 0),
+					random 	= process.random || Math.floor(Math.random() * FIGHT_INFO_LEN);
+
+			var fight 	= fightInfo[random];
+			if (type === 2) {
+				fight += ", 但" + testOptions[target].name + "避开了。";
+			} else if (type === 1) {
+				fight += ", " + testOptions[target].name + "受到了" + value + "点的暴击伤害";
+			} else {
+				fight += ", " + testOptions[target].name + "受到了" + value + "点的伤害";
+			}
+			fight = fight.replace("{attacker}", testOptions[attacker].name);
+			fight = fight.replace("{victim}", testOptions[target].name);
+			msg.push(fight);
+			contents.push({
+				target 	: target,
+				value 	: value
+			});
 		}
-		fight = fight.replace("{attacker}", testOptions[attacker].name);
-		fight = fight.replace("{victim}", testOptions[target].name);
-		msg.push(fight);
-		contents.push({
-			target 	: target,
-			value 	: value
-		});
+		testOptions.msg = msg;
+		testOptions.contents = contents;
+		driver.readData(testOptions);
+		driver.play();
 	}
-	testOptions.msg = msg;
-	testOptions.contents = contents;
 
-	win.driver = driver;
-
-	driver.readData(testOptions);
-	driver.play();
+	// driver.readData(testOptions);
+	// driver.play();
 
 })(window, document);
