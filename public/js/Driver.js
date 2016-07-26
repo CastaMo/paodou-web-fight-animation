@@ -21,6 +21,10 @@ Driver = (function() {
 
 		init: function() {
 			this.initPrepare();
+			$(".share-btn").click(function() {
+				$(".window").fadeOut(500);
+				$("#share").attr({"class": "animated fadeInUp"});
+			});
 		},
 
 		initPrepare: function() {
@@ -49,6 +53,16 @@ Driver = (function() {
 					if (newHP <= 0) {
 						self[target].playLose();
 						self[target].setCurrentHP(0);
+						setTimeout(function() {
+							var msg = "";
+							if (target === "self") {
+								msg = "fail";
+							} else {
+								msg = "success";
+							}
+							$(".window .content-field").addClass(msg);
+							$("#popup").fadeIn(500);
+						}, 1000);
 					} else {
 						self[target].playInjured();
 						self[target].setCurrentHP(newHP);
